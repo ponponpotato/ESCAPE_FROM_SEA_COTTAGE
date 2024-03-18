@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f8f2b81335a744cb43e23e791f9d8c, type: 3}
+  m_Name: Item Data Base Entity
+  m_EditorClassIdentifier: 
+  items:
+  - type: 15
+    sprite: {fileID: 21300000, guid: 11aaccea12a524c42a39254151eccd48, type: 3}
+    zoomPrefab: {fileID: 1270673953433041220, guid: bab94f6df97206a4d95642cb6dfc854d, type: 3}
+    ItemName: "\u30C9\u30FC\u30CA\u30C4"
+  - type: 1
+    sprite: {fileID: 21300000, guid: 43d776bb1776c0944886ee2252df6667, type: 3}
+    zoomPrefab: {fileID: 9024591305251820802, guid: 5a78d21a270376343b8890b2345dd55d, type: 3}
+    ItemName: "\u30BF\u30AA\u30EB"
+  - type: 2
+    sprite: {fileID: 21300000, guid: 3d0801708c71a8249b4fc226fbbbbe08, type: 3}
+    zoomPrefab: {fileID: 7282041683125009554, guid: 34e63d2f100a7a84791632119d198c7d, type: 3}
+    ItemName: "\u7DD1\u8272\u306E\u30AB\u30AE"
+  - type: 4
+    sprite: {fileID: 21300000, guid: 0d53266f00596cf4e9f976cd85d073f9, type: 3}
+    zoomPrefab: {fileID: 870985674578247939, guid: f63b3ec3c13cc874a83543c4409501a4, type: 3}
+    ItemName: "\u8D64\u8272\u306E\u7389"
+  - type: 5
+    sprite: {fileID: 21300000, guid: f15ba10dc4c5d814196a85a8203089fc, type: 3}
+    zoomPrefab: {fileID: 4814664226141881378, guid: cebbadd74b1a0894080e6c8f5ad021c2, type: 3}
+    ItemName: "\u9752\u8272\u306E\u7389"
+  - type: 6
+    sprite: {fileID: 21300000, guid: 30e554d01ca1f464f973bc3dde91cb71, type: 3}
+    zoomPrefab: {fileID: 974366984669285687, guid: 2fa22541da214204dba2e6557d7392ee, type: 3}
+    ItemName: "\u9EC4\u8272\u306E\u7389"
+  - type: 7
+    sprite: {fileID: 21300000, guid: e72325d9c4f22924c850e6b57419585e, type: 3}
+    zoomPrefab: {fileID: 4403689448600007348, guid: f5dbab621daae954798e2cb9e7a5155b, type: 3}
+    ItemName: "\u30D4\u30F3\u30AF\u8272\u306E\u7389"
+  - type: 8
+    sprite: {fileID: 21300000, guid: 56e3fab412fe5044cbe2c8b8e9305add, type: 3}
+    zoomPrefab: {fileID: 0}
+    ItemName: 
+  - type: 9
+    sprite: {fileID: 21300000, guid: 185e86d901229c248a4ea0917f3b9342, type: 3}
+    zoomPrefab: {fileID: 1935466880700599125, guid: 1d36408d6aea8974abdabbf506aa7090, type: 3}
+    ItemName: "\u30D5\u30E9\u30A4\u30D1\u30F3"
+  - type: 10
+    sprite: {fileID: 21300000, guid: ae04f5f034b1d76498b1068b773e96eb, type: 3}
+    zoomPrefab: {fileID: 0}
+    ItemName: 
+  - type: 11
+    sprite: {fileID: 21300000, guid: cbfd3d7ad729c7740a03fbf76ffa4ed9, type: 3}
+    zoomPrefab: {fileID: 0}
+    ItemName: 
+  - type: 12
+    sprite: {fileID: 21300000, guid: 6752df7a0be50ad499f9a72e6aba1af4, type: 3}
+    zoomPrefab: {fileID: 3094117789262827995, guid: e518b81d7fba5b94d8ddec8a9d933d6f, type: 3}
+    ItemName: "\u96FB\u6C60"
+  - type: 13
+    sprite: {fileID: 21300000, guid: fb76a4e2ca913b74fb7f6fee045f1764, type: 3}
+    zoomPrefab: {fileID: 6232786714700862064, guid: 94c978ce4a5087048b3f903cac19b46f, type: 3}
+    ItemName: "\u30EA\u30E2\u30B3\u30F3"
+  - type: 14
+    sprite: {fileID: 21300000, guid: 35a4aac0767ed3644a67b46734fd160c, type: 3}
+    zoomPrefab: {fileID: 4838934733316433825, guid: 7566ad5d82a14b34ab5458ed167a7b7f, type: 3}
+    ItemName: "\u7834\u308C\u305F\u7D19"
+  - type: 15
+    sprite: {fileID: 21300000, guid: 11aaccea12a524c42a39254151eccd48, type: 3}
+    zoomPrefab: {fileID: 0}
+    ItemName: 
+  - type: 16
+    sprite: {fileID: 21300000, guid: 9ed19c905c2117941aada28677870cb7, type: 3}
+    zoomPrefab: {fileID: 2252587648929975809, guid: fbcb473c78ddd8943b71d64160b61bf4, type: 3}
+    ItemName: "\u91E3\u308A\u7AFF"
+  - type: 17
+    sprite: {fileID: 21300000, guid: fa904f1ccaf1ca84cac79815516a7e37, type: 3}
+    zoomPrefab: {fileID: 8674408412131233064, guid: fc56c5d61e4aecc4f8603cef8094a74e, type: 3}
+    ItemName: "\u7A74\u306E\u958B\u3044\u305F\u68CB\u8B5C"
+  - type: 18
+    sprite: {fileID: 21300000, guid: 153328e59f2e19b43abe4e7a687c25e9, type: 3}
+    zoomPrefab: {fileID: 1461905493638739625, guid: 0b5666e2df037814d8f13c2ec228463f, type: 3}
+    ItemName: "\u5305\u4E01"
+  - type: 20
+    sprite: {fileID: 21300000, guid: c9624a081babe834cb95a53db084a293, type: 3}
+    zoomPrefab: {fileID: 0}
+    ItemName: 
+  - type: 21
+    sprite: {fileID: 21300000, guid: 31bd1c3f7a8904644b161a1149d97c2a, type: 3}
+    zoomPrefab: {fileID: 801060567676215887, guid: 4b917a5718d6ef34295150b3d6250e09, type: 3}
+    ItemName: "\u5375"
+  - type: 22
+    sprite: {fileID: 21300000, guid: 31bd1c3f7a8904644b161a1149d97c2a, type: 3}
+    zoomPrefab: {fileID: 627778508827564558, guid: 1ef3199bf44390a4abf59dba5dea417d, type: 3}
+    ItemName: 
+  - type: 23
+    sprite: {fileID: 21300000, guid: 6baf6297d0d6cfb449386f3222ec0feb, type: 3}
+    zoomPrefab: {fileID: 1211308427522994804, guid: 6511a1ad4319d5c499d424c132c8170e, type: 3}
+    ItemName: "\u30CF\u30B5\u30DF"
+  - type: 24
+    sprite: {fileID: 21300000, guid: 7e0e6c89e3a77dd48a2f0fb49d7eb912, type: 3}
+    zoomPrefab: {fileID: 1476189899766917773, guid: c8853989bf3377b469b456bb38ddcd7f, type: 3}
+    ItemName: "\u85AA"
+  - type: 25
+    sprite: {fileID: 21300000, guid: 9ca3df07a7a010346b899baf76e6b246, type: 3}
+    zoomPrefab: {fileID: 6832916573918621213, guid: 6734e440e786f734a8c6a6fa6b5ca756, type: 3}
+    ItemName: "\u30E9\u30A4\u30BF\u30FC"
+  - type: 27
+    sprite: {fileID: 21300000, guid: ba6596d2a240af748a02d76f32f51445, type: 3}
+    zoomPrefab: {fileID: 0}
+    ItemName: 
+  - type: 28
+    sprite: {fileID: 21300000, guid: 448dd581c7d62b340be7c26aab5bbc12, type: 3}
+    zoomPrefab: {fileID: 627778508827564558, guid: 1ef3199bf44390a4abf59dba5dea417d, type: 3}
+    ItemName: "\u30D5\u30E9\u30A4\u30D1\u30F3\u3068\u76EE\u7389\u713C\u304D"
+  - type: 29
+    sprite: {fileID: 21300000, guid: e72c9c5d03a6fb74d8a57ec449774702, type: 3}
+    zoomPrefab: {fileID: 5965683125095267996, guid: 33e0a5ddf6a5ba54f9cc5f071783e79e, type: 3}
+    ItemName: "\u30B9\u30C6\u30FC\u30AD"
+  - type: 30
+    sprite: {fileID: 21300000, guid: 1f198e62af7418641bcc3bde329a0fb4, type: 3}
+    zoomPrefab: {fileID: 1249923303093783968, guid: ae2c916c5bcdc7447879416390aeffa8, type: 3}
+    ItemName: "\u523A\u8EAB\u76DB\u308A"
+  - type: 3
+    sprite: {fileID: 21300000, guid: 7d0ff1cdaf0e79146979df13b8a761bd, type: 3}
+    zoomPrefab: {fileID: 5994705885689211427, guid: 339888c6e7f46dd4c9279efa274c8af6, type: 3}
+    ItemName: "\u30C9\u30E9\u30A4\u30D0\u30FC"
+  - type: 31
+    sprite: {fileID: 21300000, guid: d1a7120a4c391e846a41f43962e977b6, type: 3}
+    zoomPrefab: {fileID: 425601088161079942, guid: a5e7f5d7b53f07246a436386baf435cd, type: 3}
+    ItemName: "\u6DB2\u4F53\u71C3\u6599"
+  - type: 0
+    sprite: {fileID: 21300000, guid: 6462ca96a4359a849afce13efe56bd6d, type: 3}
+    zoomPrefab: {fileID: 3154213425838489893, guid: 3773db8bc03aca74b90ddb4d94d45962, type: 3}
+    ItemName: "\u8B0E\u306E\u30AD\u30E5\u30FC\u30D6"
+  - type: 32
+    sprite: {fileID: 21300000, guid: f7c3ae2c36e2cb24087c13b9361d3bdd, type: 3}
+    zoomPrefab: {fileID: 3655328811302279769, guid: 9504bc5a02cd5c341bbeb6127c63bea8, type: 3}
+    ItemName: "\u30C9\u30A2\u30CE\u30D6"
+  - type: 26
+    sprite: {fileID: 21300000, guid: eea5f5a2f17525a4faf4333762af4bde, type: 3}
+    zoomPrefab: {fileID: 6850100122438719315, guid: e88e9222d84483d4189d75f605f01b14, type: 3}
+    ItemName: "\u751F\u8089"
+  - type: 33
+    sprite: {fileID: 21300000, guid: be83ea376bc5ef74190a7bc4e3a2bf9e, type: 3}
+    zoomPrefab: {fileID: 83145373782147830, guid: ef54668f78195fc49b065121f8e72a26, type: 3}
+    ItemName: "\u8D64\u8272\u306E\u30AB\u30AE"
+  - type: 19
+    sprite: {fileID: 21300000, guid: b648a2aa48954c6478432134b7b0696f, type: 3}
+    zoomPrefab: {fileID: 6073355632069453941, guid: 581cfef2b6e15d546a338b3fd1488db3, type: 3}
+    ItemName: "\u9B5A"
