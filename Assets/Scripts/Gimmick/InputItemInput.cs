@@ -12,7 +12,7 @@ public class InputItemInput : MonoBehaviour
     {
         if (ItemBox.instance.CollectItemSelect(Item.Type.InputItem) == true)
         {
-            TotalItemCount = ItemBox.instance.TotalItemCount;
+            TotalItemCount = ItemBox.instance.InputItemTotalCount;
             ItemBox.instance.ItemUsed();
             for(int i = 0 ; i < TotalItemCount; i++)
             {

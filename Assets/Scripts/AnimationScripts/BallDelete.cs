@@ -24,7 +24,13 @@ public class BallDelete : MonoBehaviour
             Invoke("ItemShow", 2.5f);
             return;
         }
-        MessageShow.instance.ShowMessage("何か不思議な力を感じる");
+
+        if(GimmickStatusManager.instance.StatusCheck(GimmickType) == false)
+        {
+            MessageShow.instance.ShowMessage("何か不思議な力を感じる");
+        }
+
+
     }
 
     void ItemShow()

@@ -31,7 +31,7 @@ public class PickUpObj : MonoBehaviour
         Debug.Log(ItemBox.instance.CountSlot);
 
         ItemBox.instance.ItemCount += 1;
-        ItemBox.instance.TotalItemCount += 1;
+        ItemBox.instance.InputItemTotalCount += 1;
 
         SoundManager.instance.PlaySound(SoundManager.instance.PickUpSound);
 

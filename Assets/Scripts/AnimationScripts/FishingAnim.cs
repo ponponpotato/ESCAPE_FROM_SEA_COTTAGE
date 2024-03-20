@@ -9,6 +9,17 @@ public class FishingAnim : MonoBehaviour
     [SerializeField] GameObject ShowObj_fish;
     [SerializeField] Animator animator;
 
+    //魚が釣れる状態（ステーキを皿にのせるギミッククリア）になっていたら、釣り竿が揺れるアニメーションを一度だけ再生
+    bool isAnimActive = false;
+    private void Update()
+    {
+        if (GimmickStatusManager.instance.StatusCheck(GimmickStatus.Type.SetFood_MeetGimmick) == true && isAnimActive == false)
+        {
+            animator.Play("Fishing_Ready");
+            isAnimActive = true;
+        }
+    }
+
     // ステーキをランチョンマットにセーブするギミックが完了している場合に実行可能
     public void PlayFishingAnim()
     {
@@ -26,6 +37,7 @@ public class FishingAnim : MonoBehaviour
         gameObject.SetActive(false);
         ShowObj_rod.SetActive(true);
         ShowObj_fish.SetActive(true);
+        GimmickStatusManager.instance.StatusChanger(GimmickStatus.Type.FishingGimmick);
     }
 
 }

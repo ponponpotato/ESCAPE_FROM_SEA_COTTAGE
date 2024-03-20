@@ -116,7 +116,7 @@ MonoBehaviour:
   - type: 28
     sprite: {fileID: 21300000, guid: 448dd581c7d62b340be7c26aab5bbc12, type: 3}
     zoomPrefab: {fileID: 627778508827564558, guid: 1ef3199bf44390a4abf59dba5dea417d, type: 3}
-    ItemName: "\u30D5\u30E9\u30A4\u30D1\u30F3\u3068\u76EE\u7389\u713C\u304D"
+    ItemName: "\u76EE\u7389\u713C\u304D"
   - type: 29
     sprite: {fileID: 21300000, guid: e72c9c5d03a6fb74d8a57ec449774702, type: 3}
     zoomPrefab: {fileID: 5965683125095267996, guid: 33e0a5ddf6a5ba54f9cc5f071783e79e, type: 3}

@@ -40,6 +40,7 @@ public class GimmickStatus
         RedBallDeleteGimmck,
         TvSwitchOnGimmick,
         ShogiLastSceneGimmick,
+        FishingGimmick,
 
     }
 

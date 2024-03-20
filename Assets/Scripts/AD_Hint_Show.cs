@@ -100,7 +100,8 @@ public class AD_Hint_Show : MonoBehaviour
             rewardedAd.Show((Reward reward) =>
             {
                 // ユーザに対するリワードの処理
-                giveReward();
+                Invoke("giveReward", 1.0f);
+                //giveReward();
             });
         }
     }

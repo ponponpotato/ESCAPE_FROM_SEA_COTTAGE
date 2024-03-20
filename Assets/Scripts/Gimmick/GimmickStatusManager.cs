@@ -38,11 +38,9 @@ public class GimmickStatusManager : MonoBehaviour
     public bool redBallDeleteGimmick;
     public bool tvSwitchOnGimmick;
     public bool shogiLastSceneGimmick;
+    public bool fishingGimmick;
 
     string Hint = "";
-    public int GimmickClearCount = 0;
-
-    [SerializeField] Animator animator = default;
 
     public static GimmickStatusManager instance;
 
@@ -82,9 +80,12 @@ public class GimmickStatusManager : MonoBehaviour
         redBallDeleteGimmick = false;
         tvSwitchOnGimmick = false;
         shogiLastSceneGimmick = false;
+        fishingGimmick = false;
         Hint = "梯子の汚れをふき取れるものを探そう";
     }
 
+
+    //ギミックの進捗状況の変更
     public void StatusChanger(GimmickStatus.Type type)
     {
         switch (type)
@@ -220,14 +221,15 @@ public class GimmickStatusManager : MonoBehaviour
             case GimmickStatus.Type.ShogiLastSceneGimmick:
                 shogiLastSceneGimmick = true;
                 break;
+
+            case GimmickStatus.Type.FishingGimmick:
+                fishingGimmick = true;
+                break;
         }
 
-        if (setFood_MeetGimmick == true)
-        {
-            animator.Play("Fishing_Ready");
-        }
     }
 
+    //ギミックの進捗状況の確認変数
     public bool StatusCheck(GimmickStatus.Type type)
     {
         switch (type)
@@ -331,6 +333,9 @@ public class GimmickStatusManager : MonoBehaviour
             case GimmickStatus.Type.ShogiLastSceneGimmick:
                 return shogiLastSceneGimmick;
 
+            case GimmickStatus.Type.FishingGimmick:
+                return fishingGimmick;
+
 
         }
         Debug.Log("ヒットするギミックステータスが存在しません : " + type);
@@ -343,7 +348,7 @@ public class GimmickStatusManager : MonoBehaviour
     public string currentHintSet()
     {
         if (removeDirtGimmick == false) return "梯子の汚れをふき取れるものを探そう";
-        if (greenKeyGimmick == false) return "緑色の鍵を探そう";
+        if (greenKeyGimmick == false) return "扉の鍵穴の色に着目してみよう";
         if (driverBoxGimmick == false)
         {
             string[] Hint = new string[2] { "寝室から見える窓と洗濯機の張り紙はテトリスと関係がありそうだ", "本棚の左下にある箱の謎はテトリスと関係している" };
@@ -356,11 +361,12 @@ public class GimmickStatusManager : MonoBehaviour
         if (photoSetGimmick == false) return "本棚の写真たての写真は破れている。破れた写真を探してみよう";
         if (tvSwitchOnGimmick == false) return "テレビの電源を入れてみよう";
         if (donutBoxGimmick == false) return "テレビのそれぞれのチャンネルは季節と関係がありそうだ";
+        if (setFood_DonutGimmick == false) return "4人掛けテーブルのランチョンマットの絵柄に着目しよう";
         if (shogiLastSceneGimmick == false) return "将棋盤が怪しい";
         if (shogiGimmick == false) return "キッチンの扉にある絵柄は将棋の駒と関係がありそうだ";
         if (donutBoxGimmick == false) return "テレビのそれぞれのチャンネルは季節と関係がありそうだ";
         if (postBoxGimmick == false) return "L字型のテーブルにある4つの灰色のプレートはお風呂場にある箱と関係がありそうだ";
-        if (doorToiletGimmick == false) return "ドアノブのない扉にドアノブを取り付けてみよう";
+        if (doorToiletGimmick == false) return "ドアノブのない扉があったような";
         if (iceBoxGimmick == false) return "掛け軸とトリックアートの絵画は関係がありそうだ";
         if (coolGimmick == false) return "ライターがあれば、ベランダで一服できそうだ";
         if (cookEggGimmick == false) return "卵とフライパンがあれば、目玉焼きが作れそうだ";
@@ -372,8 +378,10 @@ public class GimmickStatusManager : MonoBehaviour
         if (setMeetGimmick == false) return "バーベキューといえばお肉が欲しいよなあ";
         if (bbqGimmick == false) return "バーベキューをするには食べ物や火種が必要だ";
         if (setFood_MeetGimmick == false) return "4人掛けテーブルのランチョンマットの絵柄に着目しよう";
-        if (setFishGimmick == false) return "二回のスタンドに釣り竿をセットしてみよう";
-        if (redKeyGimmick == false) return "緑色の鍵を探そう";
+        if (setRodGimmick == false) return "二階のスタンドに釣り竿をセットしてみよう";
+        if (fishingGimmick == false) return "釣り竿に反応がないか確かめてみよう";
+        if (setFishGimmick == false) return "魚と包丁があれば調理ができそうだ";
+        if (redKeyGimmick == false) return "扉の鍵穴の色に着目してみよう";
 
         return "ヒントはありません";
     }

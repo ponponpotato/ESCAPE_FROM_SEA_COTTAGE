@@ -21,7 +21,7 @@ public class ItemBox : MonoBehaviour
 
     //はめ込みアイテムのカウント変数と使用スロット
     public int ItemCount = 0;
-    public int TotalItemCount = 0;
+    public int InputItemTotalCount = 0;
     public Slot CountSlot = default;
 
     private void Awake()
@@ -109,23 +109,19 @@ public class ItemBox : MonoBehaviour
                 string ItemName = slot.GetItem().type.ToString();
 
                 stringBuilder.Append("SlotItem" + IDCount + "%" + ItemName + "\n");
-                //PlayerPrefs.SetString("SlotItem_" + IDCount, ItemName);
+
                 if (slot.GetItem().type == Item.Type.InputItem)
                 {
                     stringBuilder.Append("InputItemCount"  + "%" + ItemCount + "\n");
-                    stringBuilder.Append("InputItemTotalCount"  + "%" + TotalItemCount + "\n");
-                    //PlayerPrefs.SetInt("InputItemCount_", ItemCount);
-                    //PlayerPrefs.SetInt("InputItemTotalCount_", TotalItemCount);
-                    //Debug.Log(TotalItemCount);
                 }
                 IDCount++;
-                //Debug.Log(ItemName + "をセーブした");
             }
 
         }
 
+        stringBuilder.Append("InputItemTotalCount" + "%" + InputItemTotalCount + "\n");
+
         stringBuilder.Append("SlotItemCount" + "%" + IDCount + "\n");
-        //PlayerPrefs.SetInt("SlotItemCount", IDCount);
 
         await UniTask.SwitchToMainThread();
 
@@ -136,7 +132,6 @@ public class ItemBox : MonoBehaviour
     public async UniTask LoadSlotItems(Dictionary<string,string> loadDataDictionary)
     {
 
-        //await UniTask.SwitchToThreadPool();
         int Count = 0;
         int IDCount = int.Parse(loadDataDictionary.FirstOrDefault(item => item.Key == "SlotItemCount").Value);
         while (Count < IDCount)
@@ -171,14 +166,14 @@ public class ItemBox : MonoBehaviour
 
         try
         {
-            TotalItemCount = int.Parse(loadDataDictionary.FirstOrDefault(item => item.Key == "InputItemTotalCount").Value);
+            InputItemTotalCount = int.Parse(loadDataDictionary.FirstOrDefault(item => item.Key == "InputItemTotalCount").Value);
         }
         catch
         {
-            TotalItemCount = 0;
+            InputItemTotalCount = 0;
         }
 
-        //await UniTask.SwitchToMainThread();
+        await UniTask.SwitchToMainThread();
 
     }
 

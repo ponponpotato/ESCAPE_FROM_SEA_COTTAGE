@@ -23,7 +23,7 @@ public class SaveLoadData : MonoBehaviour
     public GameObject loadButton = default;
 
     //セーブデータの保存先パス
-    private string saveDataPath = System.IO.Directory.GetCurrentDirectory() + @"\SAVEDATA.txt";
+    private string saveDataPath = default;
 
     //セーブデータをstringBuilderで作成 stringより高速
     private StringBuilder saveDataBuilder;
@@ -36,8 +36,12 @@ public class SaveLoadData : MonoBehaviour
 
     private void Start()
     {
+        //セーブデータのパス設定（GetCurrentDirrectoryではなくApplication.persistentDataPathを使用：Android実機ではこれじゃないとダメ）
+        saveDataPath = Application.persistentDataPath + @"\SAVEDATA.txt";
+        Debug.Log(saveDataPath);
+
         //セーブデータ存在しなかったらロードボタン非表示
-        if(System.IO.File.Exists(saveDataPath) == false)
+        if (System.IO.File.Exists(saveDataPath) == false)
         {
             loadButton.SetActive(false);
         }
@@ -83,7 +87,6 @@ public class SaveLoadData : MonoBehaviour
             streamWriter.Close();
         }
 
-        //loadImage.GetComponent<Image>().enabled = false;
         loadImageIsActive = false;
 
         //メインメニューへ
@@ -108,41 +111,35 @@ public class SaveLoadData : MonoBehaviour
                 {
                     //表示状態なら1
                     saveDataBuilder.Append(keyName + "%" + 1 +"\n");
-                    //PlayerPrefs.SetInt(keyName, 1);
-                    //Debug.Log($"{keyName}が" + PlayerPrefs.GetInt(keyName) + "で保存された");
                 }
                 else
                 {
                     //非表示なら2
                     saveDataBuilder.Append(keyName + "%" + 2 + "\n");
-                    //PlayerPrefs.SetInt(keyName, 2);
-                    //Debug.Log($"{keyName}が" + PlayerPrefs.GetInt(keyName) + "で保存された");
                 }
 
                 ObjectNumber++;
             }
         }
 
+        await UniTask.SwitchToMainThread();
+
+
     }
 
     private async UniTask saveGimmicksStatus()
     {
-        //await UniTask.SwitchToThreadPool();
 
         //gimmickの進行状況のセーブ
         foreach (GimmickStatus.Type type in GimmickStatus.Type.GetValues(typeof(GimmickStatus.Type)))
         {
             if (GimmickStatusManager.instance.StatusCheck(type) == true)
             {
-                //PlayerPrefs.SetInt(type.ToString(), 1);
                 saveDataBuilder.Append(type.ToString() + "%" + 1 + "\n");
-                //Debug.Log($"{type.ToString()}が" + PlayerPrefs.GetInt(type.ToString()) + "で保存された");
             }
             else
             {
-                //PlayerPrefs.SetInt(type.ToString(), 2);
                 saveDataBuilder.Append(type.ToString() + "%" + 2 + "\n");
-                //Debug.Log($"{type.ToString()}が" + PlayerPrefs.GetInt(type.ToString()) + "で保存された");
             }
         }
 
@@ -154,10 +151,7 @@ public class SaveLoadData : MonoBehaviour
     //ロード
     public async void onClickLoadButton()
     {
-        //loadImage.GetComponent<Image>().enabled = true;
-        await UniTask.SwitchToThreadPool();
         loadImageIsActive = true;
-        await UniTask.SwitchToMainThread();
 
         //セーブデータファイルの読み取り
         loadDataDictionay = new Dictionary<string, string>();
@@ -188,7 +182,6 @@ public class SaveLoadData : MonoBehaviour
         //保存したアイテムのスロットへの反映
         await ItemBox.instance.LoadSlotItems(loadDataDictionay);
 
-        //loadImage.GetComponent<Image>().enabled = false;
         loadImageIsActive = false;
 
     }
@@ -196,8 +189,6 @@ public class SaveLoadData : MonoBehaviour
     private async UniTask loadObjects()
     {
         int ObjectNumber = 0;
-
-        await UniTask.SwitchToMainThread();
 
         //オブジェクトを全て取得し、PlayerPrefsの保存と照らし合わせて表示を変更する。１が表示、2が非表示。初期値の0のままのものには何もしない
         foreach (GameObject objparent in gameObjects)
@@ -226,13 +217,13 @@ public class SaveLoadData : MonoBehaviour
 
         }
 
+        await UniTask.SwitchToMainThread();
+
     }
 
     private async UniTask loadGimmicksStatus()
     {
         //gimmickの進行状況をロード
-
-        await UniTask.SwitchToMainThread();
 
         foreach (GimmickStatus.Type type in GimmickStatus.Type.GetValues(typeof(GimmickStatus.Type)))
         {
@@ -241,6 +232,8 @@ public class SaveLoadData : MonoBehaviour
                 GimmickStatusManager.instance.StatusChanger(type);
             }
         }
+
+        await UniTask.SwitchToMainThread();
 
     }
 

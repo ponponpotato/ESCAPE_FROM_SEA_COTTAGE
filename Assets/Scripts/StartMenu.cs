@@ -17,7 +17,7 @@ public class StartMenu : MonoBehaviour
     public static StartMenu instance;
 
     //セーブデータの保存先パス
-    private string saveDataPath = System.IO.Directory.GetCurrentDirectory() + @"\SAVEDATA.txt";
+    private string saveDataPath = default;
 
     //セーブデータが存在するときの続行確認ダイアログのオブジェクト
     [SerializeField] GameObject dialogPanel = default;
@@ -25,6 +25,9 @@ public class StartMenu : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
+        //セーブデータのパス設定（GetCurrentDirrectoryではなくApplication.persistentDataPathを使用：Android実機ではこれじゃないとダメ）
+        saveDataPath = Application.persistentDataPath + @"\SAVEDATA.txt";
     }
 
     public async void onClickStartButton()
