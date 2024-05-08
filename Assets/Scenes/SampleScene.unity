@@ -33866,6 +33866,7 @@ MonoBehaviour:
   redBallDeleteGimmick: 0
   tvSwitchOnGimmick: 0
   shogiLastSceneGimmick: 0
+  fishingGimmick: 0
 --- !u!4 &685131123
 Transform:
   m_ObjectHideFlags: 0
@@ -75973,7 +75974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_EventMask:
     serializedVersion: 2
-    m_Bits: 52278
+    m_Bits: 116790
   m_MaxRayIntersections: 0
 --- !u!65 &1814056433
 BoxCollider:
@@ -143499,7 +143500,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5710001, y: 0.6509002, z: 0.042506646}
+  m_Size: {x: 0.6, y: 0.6509002, z: 0.042506646}
   m_Center: {x: -0.86249995, y: 0.4259998, z: 0.64725345}
 --- !u!33 &8088053491003172793
 MeshFilter:
@@ -147757,7 +147758,7 @@ GameObject:
   - component: {fileID: 9071044688217919523}
   - component: {fileID: 9071044688217919522}
   - component: {fileID: 9071044688217919521}
-  m_Layer: 10
+  m_Layer: 16
   m_Name: Key_Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}

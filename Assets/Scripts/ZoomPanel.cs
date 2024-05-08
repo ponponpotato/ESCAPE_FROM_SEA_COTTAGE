@@ -55,6 +55,7 @@ public class ZoomPanel : MonoBehaviour
     //アイテム拡大パネル表示
     public void OnClickZoom()
     {
+        if (ItemBox.instance.GetSelectedItem() == null) return;
         zoomPanel.SetActive(true);
         ShowItem();
     }
